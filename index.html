@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Christ or Nothing | Premium Faith-Based Streetwear</title>
+    <meta name="description" content="Christ or Nothing - Premium faith-driven streetwear. Shop Christian t-shirts, hoodies, sweaters, and headwear. Bold gospel messages on premium quality garments.">
+    <meta name="keywords" content="christian clothing, faith-based apparel, gospel streetwear, christ or nothing, christian t-shirts, faith hoodies">
+    <meta name="author" content="Christ or Nothing">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta property="og:title" content="Christ or Nothing | Premium Faith-Based Streetwear">
+    <meta property="og:description" content="Faith-driven streetwear with bold gospel messages. Wear your faith unapologetically.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://christornothing.com">
+    <meta property="og:image" content="images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Christ or Nothing | Faith-Based Streetwear">
+    <meta name="twitter:description" content="Premium faith-driven apparel. Declare truth through fashion.">
+    <link rel="canonical" href="https://christornothing.com">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Font Awesome Icons -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-area">
+                    <a href="index.html" aria-label="Home">
+                        <img src="images/logo.png" alt="Christ or Nothing Logo" class="logo-img" id="siteLogo" width="45" height="45" onerror="this.src='https://placehold.co/200x200/000000/FFFFFF?text=✝️'">
+                    </a>
+                    <a href="index.html" class="brand-name">CHRIST OR NOTHING</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" id="aboutLink" class="about-hyperlink">About</a></li>
+                    <li><a href="#tshirts">Tshirts</a></li>
+                    <li><a href="#hoodies">Hoodies</a></li>
+                    <li><a href="#sweaters">Sweaters</a></li>
+                    <li><a href="#headwear">Headwear</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+                <div class="cart-icon" id="cartIcon" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="hero-tagline">EST. 2018</span>
+                    <h1 class="hero-title">CHRIST OR NOTHING</h1>
+                    <div class="hero-divider"></div>
+                    <p class="hero-subtitle">Premium faith-driven streetwear for the modern believer</p>
+                    <div class="hero-buttons">
+                        <a href="#tshirts" class="btn-primary">Shop Collection</a>
+                        <a href="#" id="aboutLinkHero" class="btn-secondary">Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Hidden About Modal -->
+            <div id="aboutModal" class="about-modal">
+                <div class="about-modal-content">
+                    <span class="about-close">&times;</span>
+                    <div class="about-modal-body">
+                        <h2>Our Story</h2>
+                        <div class="about-divider"></div>
+                        <p>Christ or Nothing is a faith-driven streetwear brand built on the foundation of truth. We believe fashion is a powerful medium to declare the gospel boldly and unapologetically.</p>
+                        <p>Every piece we create is crafted with premium materials and designed to spark conversations about faith. Whether you're in the streets or in the sanctuary, wear your testimony with confidence.</p>
+                        <div class="about-quote">
+                            <i class="fas fa-cross"></i>
+                            <span>"Christ is either Lord of all, or He is not Lord at all."</span>
+                        </div>
+                        <p><strong>Romans 1:16</strong> — For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- T-SHIRTS SECTION -->
+            <section id="tshirts" class="section">
+                <h2 class="section-title" data-aos="fade-right">T-Shirts</h2>
+                <div class="products-grid" id="tshirtsGrid"></div>
+            </section>
+
+            <!-- HOODIES SECTION -->
+            <section id="hoodies" class="section">
+                <h2 class="section-title" data-aos="fade-right">Hoodies</h2>
+                <div class="products-grid" id="hoodiesGrid"></div>
+            </section>
+
+            <!-- SWEATERS SECTION -->
+            <section id="sweaters" class="section">
+                <h2 class="section-title" data-aos="fade-right">Sweaters</h2>
+                <div class="products-grid" id="sweatersGrid"></div>
+            </section>
+
+            <!-- HEADWEAR SECTION -->
+            <section id="headwear" class="section">
+                <h2 class="section-title" data-aos="fade-right">Headwear</h2>
+                <div class="products-grid" id="headwearGrid"></div>
+            </section>
+
+            <!-- CONTACTS SECTION -->
+            <section id="contacts" class="section">
+                <h2 class="section-title" data-aos="fade-right">Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-card" data-aos="flip-left" data-aos-duration="600">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>067 166 4440</p>
+                        <span class="contact-note">Order inquiries & quotations</span>
+                    </div>
+                    <div class="contact-card" data-aos="flip-right" data-aos-duration="600">
+                        <div class="contact-icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>christornothing144@gmail.com</p>
+                        <span class="contact-note">General inquiries</span>
+                    </div>
+                </div>
+                <div class="contact-message" data-aos="fade-up">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Add items to your cart and request a quotation via WhatsApp. We'll respond with pricing and availability.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-cross"></i>
+                    <span>CHRIST OR NOTHING</span>
+                </div>
+                <p>© 2026 — Faith in every stitch</p>
+                <p><a href="sitemap.html" style="color: #888; text-decoration: none;">Sitemap</a> | <a href="index.html#contacts" style="color: #888; text-decoration: none;">Contact</a></p>
+                <p>Created by <a href="https://chitsurolazarus-alt.github.io/L.C-WebCrafts-Studios/" target="_blank" rel="noopener noreferrer">L.C WebCrafts Studios</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+                <button id="closeCartBtn" class="close-modal" aria-label="Close">&times;</button>
+            </div>
+            <div id="cartItemsList" class="cart-items">
+                <div class="empty-cart">Your cart is empty</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total" id="cartTotalPrice">Total Items: 0</div>
+                <div class="cart-total-amount" id="cartTotalAmount">Total: R 0</div>
+                <button id="whatsappOrderBtn" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
+                </button>
+                <button id="clearCartBtn" class="clear-cart-btn">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
