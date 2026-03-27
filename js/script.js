@@ -1,6 +1,7 @@
 // ============================================
 // CHRIST OR NOTHING - MAIN JAVASCRIPT
 // Shopping Cart, Product Display, Color Selection
+// Click Images to View Product Details
 // Mobile Optimized - Using Your Image Structure
 // ============================================
 
@@ -8,30 +9,30 @@
 const productsData = {
     tshirts: [
         // Product 1 - Christ or Nothing (Plain)
-        { id: 'tshirt1', name: 'Christ or Nothing', description: 'Crew neck T-shirt\nChrist or nothing\nPremium quality cotton.', basePrice: 300, type: 'Standard', colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'images/tshirts/tshirt1-white.jpg', camel: 'images/tshirts/tshirt1-camel.jpg', black: 'images/tshirts/tshirt1-black.jpg' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: false },
+        { id: 'tshirt1', name: 'Christ or Nothing', description: 'Crew neck T-shirt\nChrist or nothing\nPremium quality cotton for everyday wear.', basePrice: 300, type: 'Standard', colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'images/tshirts/tshirt1-white.jpg', camel: 'images/tshirts/tshirt1-camel.jpg', black: 'images/tshirts/tshirt1-black.jpg' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: false },
         // Product 2 - Faith Breaks Protocol
-        { id: 'tshirt2', name: 'Faith Breaks Protocol', description: 'Faith breaks protocol\nCotton T-shirt\nBold statement design.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt2-white-front.jpg', 'images/tshirts/tshirt2-white-back.jpg'], camel: ['images/tshirts/tshirt2-camel-front.jpg', 'images/tshirts/tshirt2-camel-back.jpg'], black: ['images/tshirts/tshirt2-black-front.jpg', 'images/tshirts/tshirt2-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true },
+        { id: 'tshirt2', name: 'Faith Breaks Protocol', description: 'Faith breaks protocol\nCotton T-shirt\nBold statement design with premium print.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt2-white-front.jpg', 'images/tshirts/tshirt2-white-back.jpg'], camel: ['images/tshirts/tshirt2-camel-front.jpg', 'images/tshirts/tshirt2-camel-back.jpg'], black: ['images/tshirts/tshirt2-black-front.jpg', 'images/tshirts/tshirt2-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true },
         // Product 3 - Christ Died Once For All Time
-        { id: 'tshirt3', name: 'Christ Died Once For All Time', description: 'Christ died once for all time\nCotton T-shirt\nPowerful gospel message.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt3-white-front.jpg', 'images/tshirts/tshirt3-white-back.jpg'], camel: ['images/tshirts/tshirt3-camel-front.jpg', 'images/tshirts/tshirt3-camel-back.jpg'], black: ['images/tshirts/tshirt3-black-front.jpg', 'images/tshirts/tshirt3-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true },
+        { id: 'tshirt3', name: 'Christ Died Once For All Time', description: 'Christ died once for all time\nCotton T-shirt\nPowerful gospel message on premium fabric.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt3-white-front.jpg', 'images/tshirts/tshirt3-white-back.jpg'], camel: ['images/tshirts/tshirt3-camel-front.jpg', 'images/tshirts/tshirt3-camel-back.jpg'], black: ['images/tshirts/tshirt3-black-front.jpg', 'images/tshirts/tshirt3-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true },
         // Product 4 - Pray Without Ceasing
-        { id: 'tshirt4', name: 'Pray Without Ceasing', description: 'Pray without ceasing\nCotton T-shirt\nA reminder to stay in prayer.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt4-white-front.jpg', 'images/tshirts/tshirt4-white-back.jpg'], camel: ['images/tshirts/tshirt4-camel-front.jpg', 'images/tshirts/tshirt4-camel-back.jpg'], black: ['images/tshirts/tshirt4-black-front.jpg', 'images/tshirts/tshirt4-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true },
+        { id: 'tshirt4', name: 'Pray Without Ceasing', description: 'Pray without ceasing\nCotton T-shirt\nA reminder to stay in constant prayer.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt4-white-front.jpg', 'images/tshirts/tshirt4-white-back.jpg'], camel: ['images/tshirts/tshirt4-camel-front.jpg', 'images/tshirts/tshirt4-camel-back.jpg'], black: ['images/tshirts/tshirt4-black-front.jpg', 'images/tshirts/tshirt4-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true },
         // Product 5 - Jesus Christ The Perfect Sacrifice
         { id: 'tshirt5', name: 'Jesus Christ The Perfect Sacrifice', description: 'Jesus Christ the perfect sacrifice\nCotton T-shirt\nDeclare the ultimate sacrifice.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/tshirts/tshirt5-white-front.jpg', 'images/tshirts/tshirt5-white-back.jpg'], camel: ['images/tshirts/tshirt5-camel-front.jpg', 'images/tshirts/tshirt5-camel-back.jpg'], black: ['images/tshirts/tshirt5-black-front.jpg', 'images/tshirts/tshirt5-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts', hasBackImage: true }
     ],
     hoodies: [
-        { id: 'hoodie1', name: 'Faith Breaks Protocol Hoodie', description: 'Faith breaks protocol\nHeavy hoodie\nPremium heavyweight hoodie.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie1-white-front.jpg', 'images/hoodies/hoodie1-white-back.jpg'], camel: ['images/hoodies/hoodie1-camel-front.jpg', 'images/hoodies/hoodie1-camel-back.jpg'], black: ['images/hoodies/hoodie1-black-front.jpg', 'images/hoodies/hoodie1-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true },
-        { id: 'hoodie2', name: 'Christ Died Once For All Time Hoodie', description: 'Christ died once for all time\nHeavy hoodie\nWarm and faith-filled.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie2-white-front.jpg', 'images/hoodies/hoodie2-white-back.jpg'], camel: ['images/hoodies/hoodie2-camel-front.jpg', 'images/hoodies/hoodie2-camel-back.jpg'], black: ['images/hoodies/hoodie2-black-front.jpg', 'images/hoodies/hoodie2-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true },
-        { id: 'hoodie3', name: 'Pray Without Ceasing Hoodie', description: 'Pray without ceasing\nHeavy hoodie\nStay warm while in prayer.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie3-white-front.jpg', 'images/hoodies/hoodie3-white-back.jpg'], camel: ['images/hoodies/hoodie3-camel-front.jpg', 'images/hoodies/hoodie3-camel-back.jpg'], black: ['images/hoodies/hoodie3-black-front.jpg', 'images/hoodies/hoodie3-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true },
-        { id: 'hoodie4', name: 'Jesus Christ The Perfect Sacrifice Hoodie', description: 'Jesus Christ the perfect sacrifice\nHeavy hoodie\nPremium quality.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie4-white-front.jpg', 'images/hoodies/hoodie4-white-back.jpg'], camel: ['images/hoodies/hoodie4-camel-front.jpg', 'images/hoodies/hoodie4-camel-back.jpg'], black: ['images/hoodies/hoodie4-black-front.jpg', 'images/hoodies/hoodie4-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true }
+        { id: 'hoodie1', name: 'Faith Breaks Protocol Hoodie', description: 'Faith breaks protocol\nHeavy hoodie\nPremium heavyweight hoodie for cold weather.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie1-white-front.jpg', 'images/hoodies/hoodie1-white-back.jpg'], camel: ['images/hoodies/hoodie1-camel-front.jpg', 'images/hoodies/hoodie1-camel-back.jpg'], black: ['images/hoodies/hoodie1-black-front.jpg', 'images/hoodies/hoodie1-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true },
+        { id: 'hoodie2', name: 'Christ Died Once For All Time Hoodie', description: 'Christ died once for all time\nHeavy hoodie\nWarm, comfortable, and faith-filled.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie2-white-front.jpg', 'images/hoodies/hoodie2-white-back.jpg'], camel: ['images/hoodies/hoodie2-camel-front.jpg', 'images/hoodies/hoodie2-camel-back.jpg'], black: ['images/hoodies/hoodie2-black-front.jpg', 'images/hoodies/hoodie2-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true },
+        { id: 'hoodie3', name: 'Pray Without Ceasing Hoodie', description: 'Pray without ceasing\nHeavy hoodie\nStay warm while staying in prayer.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie3-white-front.jpg', 'images/hoodies/hoodie3-white-back.jpg'], camel: ['images/hoodies/hoodie3-camel-front.jpg', 'images/hoodies/hoodie3-camel-back.jpg'], black: ['images/hoodies/hoodie3-black-front.jpg', 'images/hoodies/hoodie3-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true },
+        { id: 'hoodie4', name: 'Jesus Christ The Perfect Sacrifice Hoodie', description: 'Jesus Christ the perfect sacrifice\nHeavy hoodie\nPremium quality with bold statement.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/hoodies/hoodie4-white-front.jpg', 'images/hoodies/hoodie4-white-back.jpg'], camel: ['images/hoodies/hoodie4-camel-front.jpg', 'images/hoodies/hoodie4-camel-back.jpg'], black: ['images/hoodies/hoodie4-black-front.jpg', 'images/hoodies/hoodie4-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies', hasBackImage: true }
     ],
     sweaters: [
-        { id: 'sweater1', name: 'Faith Breaks Protocol Sweater', description: 'Faith breaks protocol\nCrew neck sweater\nComfortable everyday wear.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater1-white-front.jpg', 'images/sweaters/sweater1-white-back.jpg'], camel: ['images/sweaters/sweater1-camel-front.jpg', 'images/sweaters/sweater1-camel-back.jpg'], black: ['images/sweaters/sweater1-black-front.jpg', 'images/sweaters/sweater1-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true },
-        { id: 'sweater2', name: 'Christ Died Once For All Time Sweater', description: 'Christ died once for all time\nCrew neck sweater\nSoft and faith-inspired.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater2-white-front.jpg', 'images/sweaters/sweater2-white-back.jpg'], camel: ['images/sweaters/sweater2-camel-front.jpg', 'images/sweaters/sweater2-camel-back.jpg'], black: ['images/sweaters/sweater2-black-front.jpg', 'images/sweaters/sweater2-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true },
-        { id: 'sweater3', name: 'Pray Without Ceasing Sweater', description: 'Pray without ceasing\nCrew neck sweater\nComfort meets faith.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater3-white-front.jpg', 'images/sweaters/sweater3-white-back.jpg'], camel: ['images/sweaters/sweater3-camel-front.jpg', 'images/sweaters/sweater3-camel-back.jpg'], black: ['images/sweaters/sweater3-black-front.jpg', 'images/sweaters/sweater3-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true },
-        { id: 'sweater4', name: 'Jesus Christ The Perfect Sacrifice Sweater', description: 'Jesus Christ the perfect sacrifice\nCrew neck sweater\nPremium crewneck.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater4-white-front.jpg', 'images/sweaters/sweater4-white-back.jpg'], camel: ['images/sweaters/sweater4-camel-front.jpg', 'images/sweaters/sweater4-camel-back.jpg'], black: ['images/sweaters/sweater4-black-front.jpg', 'images/sweaters/sweater4-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true }
+        { id: 'sweater1', name: 'Faith Breaks Protocol Sweater', description: 'Faith breaks protocol\nCrew neck sweater\nComfortable crewneck for everyday wear.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater1-white-front.jpg', 'images/sweaters/sweater1-white-back.jpg'], camel: ['images/sweaters/sweater1-camel-front.jpg', 'images/sweaters/sweater1-camel-back.jpg'], black: ['images/sweaters/sweater1-black-front.jpg', 'images/sweaters/sweater1-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true },
+        { id: 'sweater2', name: 'Christ Died Once For All Time Sweater', description: 'Christ died once for all time\nCrew neck sweater\nSoft, warm, and faith-inspired.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater2-white-front.jpg', 'images/sweaters/sweater2-white-back.jpg'], camel: ['images/sweaters/sweater2-camel-front.jpg', 'images/sweaters/sweater2-camel-back.jpg'], black: ['images/sweaters/sweater2-black-front.jpg', 'images/sweaters/sweater2-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true },
+        { id: 'sweater3', name: 'Pray Without Ceasing Sweater', description: 'Pray without ceasing\nCrew neck sweater\nComfort meets faith in this classic piece.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater3-white-front.jpg', 'images/sweaters/sweater3-white-back.jpg'], camel: ['images/sweaters/sweater3-camel-front.jpg', 'images/sweaters/sweater3-camel-back.jpg'], black: ['images/sweaters/sweater3-black-front.jpg', 'images/sweaters/sweater3-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true },
+        { id: 'sweater4', name: 'Jesus Christ The Perfect Sacrifice Sweater', description: 'Jesus Christ the perfect sacrifice\nCrew neck sweater\nPremium crewneck with powerful message.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: ['images/sweaters/sweater4-white-front.jpg', 'images/sweaters/sweater4-white-back.jpg'], camel: ['images/sweaters/sweater4-camel-front.jpg', 'images/sweaters/sweater4-camel-back.jpg'], black: ['images/sweaters/sweater4-black-front.jpg', 'images/sweaters/sweater4-black-back.jpg'] }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters', hasBackImage: true }
     ],
     headwear: [
-        { id: 'cap', name: 'Christ or Nothing CAP', description: 'Premium quality cap with embroidered logo\nAdjustable strap.', basePrice: 250, colors: ['black'], colorNames: { black: 'Black' }, images: { black: 'images/headwear/cap-black.jpg' }, sizes: ['OSFA'], category: 'headwear', hasBackImage: false },
+        { id: 'cap', name: 'Christ or Nothing CAP', description: 'Premium quality cap with embroidered logo\nAdjustable strap for perfect fit.', basePrice: 250, colors: ['black'], colorNames: { black: 'Black' }, images: { black: 'images/headwear/cap-black.jpg' }, sizes: ['OSFA'], category: 'headwear', hasBackImage: false },
         { id: 'bucket', name: 'Christ or Nothing Bucket Hat', description: 'Street style bucket hat with faith message\nOne size fits most.', basePrice: 250, colors: ['black'], colorNames: { black: 'Black' }, images: { black: 'images/headwear/bucket-black.jpg' }, sizes: ['OSFA'], category: 'headwear', hasBackImage: false }
     ]
 };
@@ -232,7 +233,7 @@ function sendWhatsAppQuote() {
     showNotification('Opening WhatsApp...');
 }
 
-// Product Rendering Functions
+// Product Rendering Functions - Click Image to View Details
 function renderProductGrid(category, productsArray) {
     const container = document.getElementById(category + 'Grid');
     if (!container) return;
@@ -275,7 +276,9 @@ function renderProductGrid(category, productsArray) {
             </div>
         `;
         
+        // Click on the ENTIRE CARD (including image) goes to product detail
         card.addEventListener('click', (e) => {
+            // Don't navigate if clicking on color swatch or type button
             if (!e.target.classList.contains('color-swatch') && !e.target.classList.contains('type-btn')) {
                 window.location.href = 'product.html?id=' + product.id;
             }
@@ -284,6 +287,7 @@ function renderProductGrid(category, productsArray) {
         container.appendChild(card);
     }
     
+    // Color swatch click handlers (prevent card click)
     document.querySelectorAll('.color-swatch').forEach(swatch => {
         swatch.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -293,6 +297,7 @@ function renderProductGrid(category, productsArray) {
         });
     });
     
+    // Type button click handlers (prevent card click)
     document.querySelectorAll('.type-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -357,6 +362,7 @@ function renderProductDetail() {
     const currentImage = Array.isArray(images) ? images[0] : images;
     const price = getPrice(product, selectedTypes[product.id]);
     
+    // Build thumbnails if multiple images
     let thumbnails = '';
     if (Array.isArray(images) && images.length > 1) {
         for (let i = 0; i < images.length; i++) {
@@ -364,11 +370,13 @@ function renderProductDetail() {
         }
     }
     
+    // Build color buttons
     let colorBtns = '';
     for (const c of product.colors) {
         colorBtns += `<button class="color-btn ${selectedColors[product.id] === c ? 'active' : ''}" data-color="${c}">${product.colorNames[c]}</button>`;
     }
     
+    // Build type buttons if applicable
     let typeBtns = '';
     if (product.typeOptions) {
         for (const t of product.typeOptions) {
@@ -376,6 +384,7 @@ function renderProductDetail() {
         }
     }
     
+    // Build size buttons
     let sizeBtns = '';
     for (const s of product.sizes) {
         sizeBtns += `<button class="size-btn ${selectedSizes[product.id] === s ? 'active' : ''}" data-size="${s}">${s}</button>`;
@@ -474,7 +483,7 @@ function renderProductDetail() {
         });
     });
     
-    // Recommendations
+    // Recommendations - Show other products from same category
     const recommendations = [];
     for (const cat in productsData) {
         recommendations.push(...productsData[cat].filter(p => p.id !== product.id && p.category === product.category));
