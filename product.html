@@ -4,32 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>Product Detail | Christ or Nothing</title>
+    <meta name="description" content="View detailed product information for Christ or Nothing faith-based apparel.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #000; color: #fff; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 16px; }
-        
-        /* Header */
-        header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #2A2A2A; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; gap: 12px; }
-        .logo-area { display: flex; align-items: center; gap: 10px; }
-        .logo-img { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; background: white; padding: 3px; }
-        .brand-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: white; text-decoration: none; }
-        .mobile-menu-btn { display: block; background: none; border: none; color: white; font-size: 1.3rem; cursor: pointer; padding: 8px; }
-        .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #000; flex-direction: column; padding: 20px; gap: 15px; border-bottom: 1px solid #2A2A2A; list-style: none; }
-        .nav-menu.active { display: flex; }
-        .nav-menu li a { color: white; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; }
-        .cart-icon { position: relative; cursor: pointer; font-size: 1.3rem; color: white; }
-        .cart-count { position: absolute; top: -10px; right: -12px; background: white; color: black; font-size: 0.6rem; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
-        
-        /* Product Detail */
         .product-detail { margin: 80px 0 40px; }
         .product-detail-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 40px; }
         .product-detail-images { background: #111; padding: 20px; border: 1px solid #2A2A2A; border-radius: 12px; }
         .product-detail-main-image { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
-        .product-detail-thumbnails { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
+        .product-detail-thumbnails { display: flex; gap: 10px; margin-top: 15px; justify-content: center; flex-wrap: wrap; }
         .thumbnail { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border: 2px solid transparent; border-radius: 8px; }
         .thumbnail.active, .thumbnail:hover { border-color: white; }
         .product-detail-info h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 12px; }
@@ -38,39 +22,17 @@
         .color-btn, .size-btn { background: transparent; border: 1px solid #2A2A2A; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color: white; cursor: pointer; margin: 4px; }
         .color-btn.active, .size-btn.active, .color-btn:hover, .size-btn:hover { background: white; color: black; }
         .add-to-cart-detail { background: white; color: black; border: none; padding: 12px 24px; width: 100%; font-weight: 700; font-size: 0.85rem; cursor: pointer; border-radius: 40px; margin-top: 20px; }
-        .add-to-cart-detail:hover { background: #ddd; }
         .back-link { color: #888; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 0.85rem; }
         .back-link:hover { color: white; }
-        
-        /* Recommendations */
         .recommendations-section { margin: 40px 0 60px; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px; border-left: 4px solid white; padding-left: 15px; }
-        .recommendations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .recommendations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
         .recommendation-card { background: #111; border: 1px solid #2A2A2A; padding: 12px; cursor: pointer; text-align: center; border-radius: 12px; }
         .recommendation-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; margin-bottom: 10px; }
         .recommendation-card h4 { font-size: 0.75rem; }
         .recommendation-card p { font-size: 0.8rem; font-weight: 700; }
-        
-        /* Cart Modal */
-        .cart-modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; }
-        .cart-modal.open { display: flex; }
-        .cart-content { background: #000; border: 1px solid #2A2A2A; max-width: 500px; width: 90%; border-radius: 16px; padding: 25px; }
-        .cart-items { max-height: 350px; overflow-y: auto; margin: 15px 0; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #2A2A2A; }
-        .remove-item { background: transparent; border: 1px solid #2A2A2A; color: white; padding: 4px 10px; border-radius: 20px; cursor: pointer; }
-        .whatsapp-btn, .clear-cart-btn { padding: 10px; width: 100%; margin-top: 10px; border-radius: 40px; cursor: pointer; font-weight: 600; }
-        .whatsapp-btn { background: #25D366; color: black; border: none; }
-        .clear-cart-btn { background: transparent; border: 1px solid #2A2A2A; color: white; }
-        .notification { position: fixed; bottom: 20px; right: 20px; background: white; color: black; padding: 10px 18px; border-radius: 40px; font-size: 0.8rem; z-index: 1002; animation: slideIn 0.3s ease; }
-        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        footer { background: #111; border-top: 1px solid #2A2A2A; padding: 30px 0; margin-top: 40px; text-align: center; font-size: 0.7rem; color: #888; }
-        footer a { color: white; text-decoration: none; }
-        
         @media (min-width: 768px) {
             .product-detail-grid { grid-template-columns: 1fr 1fr; gap: 50px; }
             .recommendations-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
-            .mobile-menu-btn { display: none; }
-            .nav-menu { display: flex !important; position: static; flex-direction: row; width: auto; padding: 0; gap: 28px; background: transparent; border: none; }
         }
     </style>
 </head>
@@ -79,10 +41,10 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo-area">
-                    <img src="https://placehold.co/200x200/ffffff/000000?text=✝️" class="logo-img" alt="Logo">
+                    <img src="images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://placehold.co/200x200/ffffff/000000?text=✝️'">
                     <a href="index.html" class="brand-name">CHRIST OR NOTHING</a>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html#tshirts">Tshirts</a></li>
                     <li><a href="index.html#hoodies">Hoodies</a></li>
@@ -115,10 +77,7 @@
 
     <div id="cartModal" class="cart-modal">
         <div class="cart-content">
-            <div class="cart-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <h3>Your Cart</h3>
-                <button class="close-modal" id="closeCartBtn" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
-            </div>
+            <div class="cart-header"><h3>Your Cart</h3><button id="closeCartBtn" class="close-modal">&times;</button></div>
             <div id="cartItemsList" class="cart-items"><div class="empty-cart">Your cart is empty</div></div>
             <div class="cart-footer">
                 <div class="cart-total" id="cartTotalPrice">Total Items: 0</div>
@@ -129,213 +88,6 @@
         </div>
     </div>
 
-    <script>
-        // Product data (same as index.html)
-        const productsData = {
-            tshirts: [
-                { id: 'tshirt1', name: 'Christ or Nothing', description: 'Crew neck T-shirt\nChrist or nothing\nPremium quality cotton.', basePrice: 300, type: 'Standard', colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=White+Tee', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Camel+Tee', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Black+Tee' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts' },
-                { id: 'tshirt2', name: 'Faith Breaks Protocol', description: 'Faith breaks protocol\nCotton T-shirt\nBold statement design.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Faith+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Faith+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Faith+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts' },
-                { id: 'tshirt3', name: 'Christ Died Once For All Time', description: 'Christ died once for all time\nCotton T-shirt\nPowerful gospel message.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Christ+Died+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Christ+Died+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Christ+Died+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts' },
-                { id: 'tshirt4', name: 'Pray Without Ceasing', description: 'Pray without ceasing\nCotton T-shirt\nA reminder to stay in prayer.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Pray+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Pray+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Pray+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts' },
-                { id: 'tshirt5', name: 'Jesus Christ The Perfect Sacrifice', description: 'Jesus Christ the perfect sacrifice\nCotton T-shirt\nDeclare the ultimate sacrifice.', basePrice: 400, typeOptions: ['Standard', 'Oversized'], colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Sacrifice+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Sacrifice+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Sacrifice+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'tshirts' }
-            ],
-            hoodies: [
-                { id: 'hoodie1', name: 'Faith Breaks Protocol Hoodie', description: 'Faith breaks protocol\nHeavy hoodie\nPremium heavyweight hoodie.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Hoodie+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Hoodie+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Hoodie+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies' },
-                { id: 'hoodie2', name: 'Christ Died Once For All Time Hoodie', description: 'Christ died once for all time\nHeavy hoodie\nWarm and faith-filled.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Christ+Hoodie+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Christ+Hoodie+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Christ+Hoodie+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies' },
-                { id: 'hoodie3', name: 'Pray Without Ceasing Hoodie', description: 'Pray without ceasing\nHeavy hoodie\nStay warm while in prayer.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Pray+Hoodie+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Pray+Hoodie+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Pray+Hoodie+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies' },
-                { id: 'hoodie4', name: 'Jesus Christ The Perfect Sacrifice Hoodie', description: 'Jesus Christ the perfect sacrifice\nHeavy hoodie\nPremium quality.', basePrice: 600, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Sacrifice+Hoodie+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Sacrifice+Hoodie+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Sacrifice+Hoodie+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'hoodies' }
-            ],
-            sweaters: [
-                { id: 'sweater1', name: 'Faith Breaks Protocol Sweater', description: 'Faith breaks protocol\nCrew neck sweater\nComfortable everyday wear.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Sweater+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Sweater+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Sweater+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters' },
-                { id: 'sweater2', name: 'Christ Died Once For All Time Sweater', description: 'Christ died once for all time\nCrew neck sweater\nSoft and faith-inspired.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Christ+Sweater+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Christ+Sweater+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Christ+Sweater+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters' },
-                { id: 'sweater3', name: 'Pray Without Ceasing Sweater', description: 'Pray without ceasing\nCrew neck sweater\nComfort meets faith.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Pray+Sweater+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Pray+Sweater+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Pray+Sweater+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters' },
-                { id: 'sweater4', name: 'Jesus Christ The Perfect Sacrifice Sweater', description: 'Jesus Christ the perfect sacrifice\nCrew neck sweater\nPremium crewneck.', basePrice: 560, colors: ['white', 'camel', 'black'], colorNames: { white: 'White', camel: 'Camel Brown', black: 'Black' }, images: { white: 'https://placehold.co/600x600/FFFFFF/000000?text=Sacrifice+Sweater+White', camel: 'https://placehold.co/600x600/C4A27A/FFFFFF?text=Sacrifice+Sweater+Camel', black: 'https://placehold.co/600x600/000000/FFFFFF?text=Sacrifice+Sweater+Black' }, sizes: ['S', 'M', 'L', 'XL', 'XXL'], category: 'sweaters' }
-            ],
-            headwear: [
-                { id: 'cap', name: 'Christ or Nothing CAP', description: 'Premium quality cap with embroidered logo\nAdjustable strap.', basePrice: 250, colors: ['black'], colorNames: { black: 'Black' }, images: { black: 'https://placehold.co/600x600/000000/FFFFFF?text=Black+Cap' }, sizes: ['OSFA'], category: 'headwear' },
-                { id: 'bucket', name: 'Christ or Nothing Bucket Hat', description: 'Street style bucket hat with faith message\nOne size fits most.', basePrice: 250, colors: ['black'], colorNames: { black: 'Black' }, images: { black: 'https://placehold.co/600x600/000000/FFFFFF?text=Black+Bucket' }, sizes: ['OSFA'], category: 'headwear' }
-            ]
-        };
-
-        let cart = [];
-        const WHATSAPP_NUMBER = '27671664440';
-        const DELIVERY_FEE = 60;
-        let selectedColors = {};
-        let selectedTypes = {};
-        let selectedSizes = {};
-
-        function formatPrice(p) { return 'R ' + p.toLocaleString(); }
-        function getPrice(p, type) { if (p.typeOptions && type === 'Oversized') return p.basePrice + 100; return p.basePrice; }
-        
-        function showNotification(msg) {
-            let n = document.createElement('div'); n.className = 'notification'; n.innerHTML = msg;
-            document.body.appendChild(n);
-            setTimeout(() => n.remove(), 3000);
-        }
-
-        function saveCart() { localStorage.setItem('christOrNothingCart', JSON.stringify(cart)); }
-        function loadCart() { let saved = localStorage.getItem('christOrNothingCart'); if (saved) { try { cart = JSON.parse(saved); updateCartUI(); } catch(e) {} } }
-        
-        function addToCart(item) { cart.push(item); saveCart(); updateCartUI(); showNotification(item.name + ' added'); }
-        function removeFromCart(idx) { cart.splice(idx, 1); saveCart(); updateCartUI(); showNotification('Item removed'); }
-        function clearCart() { cart = []; saveCart(); updateCartUI(); showNotification('Cart cleared'); }
-        function getCartTotal() { return cart.reduce((t, i) => t + i.price, 0); }
-        
-        function updateCartUI() {
-            let count = document.getElementById('cartCount'); if (count) count.textContent = cart.length;
-            let container = document.getElementById('cartItemsList'); if (!container) return;
-            if (cart.length === 0) { container.innerHTML = '<div class="empty-cart">Your cart is empty</div>'; document.getElementById('cartTotalPrice').textContent = 'Total Items: 0'; document.getElementById('cartTotalAmount').innerHTML = 'Total: R 0'; return; }
-            let html = '';
-            for (let i = 0; i < cart.length; i++) {
-                let item = cart[i];
-                html += `<div class="cart-item"><div><strong>${item.name}</strong><br><small>${item.colorName} | ${item.size}${item.type ? ' | ' + item.type : ''}</small><br>${formatPrice(item.price)}</div><button class="remove-item" data-index="${i}">Remove</button></div>`;
-            }
-            container.innerHTML = html;
-            document.getElementById('cartTotalPrice').textContent = 'Total Items: ' + cart.length;
-            let subtotal = getCartTotal();
-            document.getElementById('cartTotalAmount').innerHTML = `Subtotal: ${formatPrice(subtotal)}<br>Delivery: ${formatPrice(DELIVERY_FEE)}<br><strong>Total: ${formatPrice(subtotal + DELIVERY_FEE)}</strong>`;
-            document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', function() { removeFromCart(parseInt(this.dataset.index)); }));
-        }
-        
-        function sendWhatsApp() {
-            if (cart.length === 0) { showNotification('Cart is empty'); return; }
-            let msg = "*CHRIST OR NOTHING - ORDER SUMMARY*\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
-            msg += "Order #: ORD-" + Date.now().toString().slice(-6) + "\nDate: " + new Date().toLocaleString() + "\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n*ITEMS ORDERED:*\n─────────────────\n";
-            for (let i = 0; i < cart.length; i++) {
-                let item = cart[i];
-                msg += (i+1) + ". " + item.name + (item.type ? " (" + item.type + ")" : "") + "\n   Color: " + item.colorName + "\n   Size: " + item.size + "\n   Price: " + formatPrice(item.price) + "\n   ─────────────────\n";
-            }
-            let subtotal = getCartTotal();
-            msg += "\n*PRICE SUMMARY:*\n─────────────────\nSubtotal: " + formatPrice(subtotal) + "\nDelivery: " + formatPrice(DELIVERY_FEE) + "\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n*TOTAL: " + formatPrice(subtotal + DELIVERY_FEE) + "*\n\n*CUSTOMER DETAILS:*\n─────────────────\nFull Name: \nAddress: \nPhone: \n\n*THANK YOU!*";
-            window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
-        }
-        
-        function findProductById(id) {
-            for (let cat in productsData) {
-                let found = productsData[cat].find(p => p.id === id);
-                if (found) return found;
-            }
-            return null;
-        }
-        
-        function renderProductDetail() {
-            let urlParams = new URLSearchParams(window.location.search);
-            let productId = urlParams.get('id');
-            if (!productId) { window.location.href = 'index.html'; return; }
-            let product = findProductById(productId);
-            if (!product) { document.getElementById('productDetail').innerHTML = '<div class="error">Product not found. <a href="index.html">Return to shop</a></div>'; return; }
-            
-            if (!selectedColors[product.id]) selectedColors[product.id] = product.colors[0];
-            if (!selectedTypes[product.id]) selectedTypes[product.id] = product.typeOptions ? product.typeOptions[0] : null;
-            if (!selectedSizes[product.id]) selectedSizes[product.id] = product.sizes[0];
-            
-            let currentImage = product.images[selectedColors[product.id]];
-            let price = getPrice(product, selectedTypes[product.id]);
-            
-            let colorBtns = '';
-            for (let c of product.colors) {
-                colorBtns += `<button class="color-btn ${selectedColors[product.id] === c ? 'active' : ''}" data-color="${c}">${product.colorNames[c]}</button>`;
-            }
-            let typeBtns = '';
-            if (product.typeOptions) {
-                for (let t of product.typeOptions) {
-                    typeBtns += `<button class="type-btn ${selectedTypes[product.id] === t ? 'active' : ''}" data-type="${t}">${t}</button>`;
-                }
-            }
-            let sizeBtns = '';
-            for (let s of product.sizes) {
-                sizeBtns += `<button class="size-btn ${selectedSizes[product.id] === s ? 'active' : ''}" data-size="${s}">${s}</button>`;
-            }
-            
-            document.getElementById('productDetail').innerHTML = `
-                <div class="product-detail-grid">
-                    <div class="product-detail-images">
-                        <img src="${currentImage}" class="product-detail-main-image" id="mainImage" alt="${product.name}">
-                    </div>
-                    <div class="product-detail-info">
-                        <h1>${product.name}</h1>
-                        <div class="product-detail-price" id="detailPrice">${formatPrice(price)}</div>
-                        <div class="product-detail-description">${product.description.replace(/\n/g, '<br>')}</div>
-                        <div><strong>Color:</strong><br> ${colorBtns}</div>
-                        ${typeBtns ? '<div><strong>Style:</strong><br> ' + typeBtns + '</div>' : ''}
-                        <div><strong>Size:</strong><br> ${sizeBtns}</div>
-                        <button class="add-to-cart-detail" id="addToCartDetail">Add to Cart</button>
-                        <div><a href="index.html" class="back-link">← Back to Shop</a></div>
-                    </div>
-                </div>`;
-            
-            document.querySelectorAll('.color-btn').forEach(btn => btn.addEventListener('click', function() {
-                let color = this.dataset.color;
-                selectedColors[product.id] = color;
-                document.getElementById('mainImage').src = product.images[color];
-                document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            }));
-            
-            document.querySelectorAll('.type-btn').forEach(btn => btn.addEventListener('click', function() {
-                let type = this.dataset.type;
-                selectedTypes[product.id] = type;
-                document.getElementById('detailPrice').textContent = formatPrice(getPrice(product, type));
-                document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            }));
-            
-            document.querySelectorAll('.size-btn').forEach(btn => btn.addEventListener('click', function() {
-                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                selectedSizes[product.id] = this.dataset.size;
-            }));
-            
-            document.getElementById('addToCartDetail').addEventListener('click', () => {
-                addToCart({
-                    id: product.id, name: product.name, description: product.description,
-                    color: selectedColors[product.id], colorName: product.colorNames[selectedColors[product.id]],
-                    size: selectedSizes[product.id], type: selectedTypes[product.id],
-                    price: getPrice(product, selectedTypes[product.id])
-                });
-            });
-            
-            // Recommendations
-            let recs = [];
-            for (let cat in productsData) {
-                recs = recs.concat(productsData[cat].filter(p => p.id !== product.id && p.category === product.category));
-            }
-            recs = recs.slice(0, 4);
-            let recContainer = document.getElementById('recommendationsGrid');
-            if (recContainer) {
-                if (recs.length === 0) recContainer.innerHTML = '<p>No recommendations available.</p>';
-                else {
-                    let recHtml = '';
-                    for (let rec of recs) {
-                        recHtml += `<div class="recommendation-card" data-id="${rec.id}"><img src="${rec.images[rec.colors[0]]}" alt="${rec.name}"><h4>${rec.name}</h4><p>${formatPrice(rec.basePrice)}</p></div>`;
-                    }
-                    recContainer.innerHTML = recHtml;
-                    document.querySelectorAll('.recommendation-card').forEach(card => card.addEventListener('click', () => window.location.href = 'product.html?id=' + card.dataset.id));
-                }
-            }
-        }
-        
-        function init() {
-            loadCart();
-            // Mobile menu
-            let menuBtn = document.getElementById('mobileMenuBtn');
-            let navMenu = document.getElementById('navMenu');
-            if (menuBtn && navMenu) menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
-            // Cart modal
-            let cartModal = document.getElementById('cartModal');
-            let cartIcon = document.getElementById('cartIcon');
-            let closeCart = document.getElementById('closeCartBtn');
-            let whatsappBtn = document.getElementById('whatsappOrderBtn');
-            let clearCartBtn = document.getElementById('clearCartBtn');
-            if (cartIcon) cartIcon.addEventListener('click', () => { updateCartUI(); cartModal.classList.add('open'); });
-            if (closeCart) closeCart.addEventListener('click', () => cartModal.classList.remove('open'));
-            if (whatsappBtn) whatsappBtn.addEventListener('click', sendWhatsApp);
-            if (clearCartBtn) clearCartBtn.addEventListener('click', clearCart);
-            cartModal.addEventListener('click', (e) => { if (e.target === cartModal) cartModal.classList.remove('open'); });
-            renderProductDetail();
-        }
-        
-        init();
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
