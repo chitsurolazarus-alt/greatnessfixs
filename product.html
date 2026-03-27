@@ -12,28 +12,33 @@
         .product-detail { margin: 80px 0 40px; }
         .product-detail-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 40px; }
         .product-detail-images { background: #111; padding: 20px; border: 1px solid #2A2A2A; border-radius: 12px; }
-        .product-detail-main-image { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
+        .product-detail-main-image { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; cursor: pointer; transition: transform 0.3s ease; }
+        .product-detail-main-image:hover { transform: scale(1.02); }
         .product-detail-thumbnails { display: flex; gap: 10px; margin-top: 15px; justify-content: center; flex-wrap: wrap; }
-        .thumbnail { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border: 2px solid transparent; border-radius: 8px; }
-        .thumbnail.active, .thumbnail:hover { border-color: white; }
+        .thumbnail { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border: 2px solid transparent; border-radius: 8px; transition: all 0.2s ease; }
+        .thumbnail.active, .thumbnail:hover { border-color: white; transform: translateY(-2px); }
         .product-detail-info h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 12px; }
         .product-detail-price { font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; }
-        .product-detail-description { color: #ccc; margin-bottom: 20px; white-space: pre-line; font-size: 0.9rem; }
-        .color-btn, .size-btn { background: transparent; border: 1px solid #2A2A2A; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color: white; cursor: pointer; margin: 4px; }
-        .color-btn.active, .size-btn.active, .color-btn:hover, .size-btn:hover { background: white; color: black; }
-        .add-to-cart-detail { background: white; color: black; border: none; padding: 12px 24px; width: 100%; font-weight: 700; font-size: 0.85rem; cursor: pointer; border-radius: 40px; margin-top: 20px; }
-        .back-link { color: #888; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 0.85rem; }
+        .product-detail-description { color: #ccc; margin-bottom: 20px; white-space: pre-line; font-size: 0.9rem; line-height: 1.6; }
+        .color-btn, .size-btn { background: transparent; border: 1px solid #2A2A2A; padding: 8px 16px; border-radius: 30px; font-size: 0.75rem; color: white; cursor: pointer; margin: 4px; transition: all 0.2s ease; }
+        .color-btn.active, .size-btn.active, .color-btn:hover, .size-btn:hover { background: white; color: black; border-color: white; }
+        .add-to-cart-detail { background: white; color: black; border: none; padding: 14px 24px; width: 100%; font-weight: 700; font-size: 0.9rem; cursor: pointer; border-radius: 40px; margin-top: 20px; transition: all 0.2s ease; }
+        .add-to-cart-detail:hover { background: #ddd; transform: translateY(-2px); }
+        .back-link { color: #888; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 0.85rem; transition: color 0.2s; }
         .back-link:hover { color: white; }
         .recommendations-section { margin: 40px 0 60px; }
         .recommendations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
-        .recommendation-card { background: #111; border: 1px solid #2A2A2A; padding: 12px; cursor: pointer; text-align: center; border-radius: 12px; }
+        .recommendation-card { background: #111; border: 1px solid #2A2A2A; padding: 12px; cursor: pointer; text-align: center; border-radius: 12px; transition: all 0.2s ease; }
+        .recommendation-card:hover { transform: translateY(-4px); border-color: white; }
         .recommendation-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; margin-bottom: 10px; }
-        .recommendation-card h4 { font-size: 0.75rem; }
+        .recommendation-card h4 { font-size: 0.75rem; margin-bottom: 5px; }
         .recommendation-card p { font-size: 0.8rem; font-weight: 700; }
         @media (min-width: 768px) {
             .product-detail-grid { grid-template-columns: 1fr 1fr; gap: 50px; }
             .recommendations-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
         }
+        .loading { text-align: center; padding: 50px; color: #888; }
+        .error { text-align: center; padding: 50px; color: #ff4444; }
     </style>
 </head>
 <body>
