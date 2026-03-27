@@ -272,6 +272,11 @@ header.header-hidden {
     object-fit: contain;
     background: #1A1A1A;
     padding: 16px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.02);
 }
 
 .product-info {
