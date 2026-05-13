@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Christ or Nothing | Premium Faith-Based Apparel</title>
+    <title>Product Detail | Christ or Nothing</title>
     
     <!-- Favicon - logo.png as website icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
@@ -26,17 +26,16 @@
             <div class="navbar">
                 <div class="logo-area">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Christ or Nothing Logo" class="logo-img" id="siteLogo" onerror="this.src='https://placehold.co/200x200/000000/FFFFFF?text=✝️'">
+                        <img src="images/logo.png" alt="Christ or Nothing Logo" class="logo-img" onerror="this.src='https://placehold.co/200x200/000000/FFFFFF?text=✝️'">
                     </a>
                     <a href="index.html" class="brand-name">CHRIST OR NOTHING</a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#" id="aboutLink" class="about-hyperlink">About</a></li>
-                    <li><a href="#tshirts">Tshirts</a></li>
-                    <li><a href="#hoodies">Hoodies</a></li>
-                    <li><a href="#sweaters">Sweaters</a></li>
-                    <li><a href="#headwear">Headwear</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
+                    <li><a href="index.html#tshirts">Tshirts</a></li>
+                    <li><a href="index.html#hoodies">Hoodies</a></li>
+                    <li><a href="index.html#sweaters">Sweaters</a></li>
+                    <li><a href="index.html#headwear">Headwear</a></li>
+                    <li><a href="index.html#contacts">Contact</a></li>
                 </ul>
                 <div class="cart-icon" id="cartIcon">
                     <i class="fas fa-shopping-bag"></i>
@@ -46,93 +45,15 @@
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="hero-tagline">EST. 2018</span>
-                    <h1 class="hero-title">CHRIST OR NOTHING</h1>
-                    <div class="hero-divider"></div>
-                    <p class="hero-subtitle">Premium faith-driven streetwear for the modern believer</p>
-                    <div class="hero-buttons">
-                        <a href="#tshirts" class="btn-primary">Shop Collection</a>
-                        <a href="#" id="aboutLinkHero" class="btn-secondary">Our Story</a>
-                    </div>
-                </div>
-            </div>
+    <main class="container">
+        <!-- Product Detail Section -->
+        <div class="product-detail" id="productDetail" data-aos="fade-up" data-aos-duration="800"></div>
+
+        <!-- Recommendations Section -->
+        <section class="recommendations-section">
+            <h2 class="section-title" data-aos="fade-right">You May Also Like</h2>
+            <div class="recommendations-grid" id="recommendationsGrid" data-aos="fade-up" data-aos-delay="200"></div>
         </section>
-
-        <div class="container">
-            <!-- Hidden About Modal -->
-            <div id="aboutModal" class="about-modal">
-                <div class="about-modal-content">
-                    <span class="about-close">&times;</span>
-                    <div class="about-modal-body">
-                        <h2>Our Story</h2>
-                        <div class="about-divider"></div>
-                        <p>Christ or Nothing is a faith-driven streetwear brand built on the foundation of truth. We believe fashion is a powerful medium to declare the gospel boldly and unapologetically.</p>
-                        <p>Every piece we create is crafted with premium materials and designed to spark conversations about faith. Whether you're in the streets or in the sanctuary, wear your testimony with confidence.</p>
-                        <div class="about-quote">
-                            <i class="fas fa-cross"></i>
-                            <span>"Christ is either Lord of all, or He is not Lord at all."</span>
-                        </div>
-                        <p><strong>Romans 1:16</strong> — For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- T-SHIRTS SECTION -->
-            <section id="tshirts" class="section">
-                <h2 class="section-title" data-aos="fade-right">T-Shirts</h2>
-                <div class="products-grid" id="tshirtsGrid"></div>
-            </section>
-
-            <!-- HOODIES SECTION -->
-            <section id="hoodies" class="section">
-                <h2 class="section-title" data-aos="fade-right">Hoodies</h2>
-                <div class="products-grid" id="hoodiesGrid"></div>
-            </section>
-
-            <!-- SWEATERS SECTION -->
-            <section id="sweaters" class="section">
-                <h2 class="section-title" data-aos="fade-right">Sweaters</h2>
-                <div class="products-grid" id="sweatersGrid"></div>
-            </section>
-
-            <!-- HEADWEAR SECTION -->
-            <section id="headwear" class="section">
-                <h2 class="section-title" data-aos="fade-right">Headwear</h2>
-                <div class="products-grid" id="headwearGrid"></div>
-            </section>
-
-            <!-- CONTACTS SECTION -->
-            <section id="contacts" class="section">
-                <h2 class="section-title" data-aos="fade-right">Contact</h2>
-                <div class="contact-grid">
-                    <div class="contact-card" data-aos="flip-left" data-aos-duration="600">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <h3>WhatsApp</h3>
-                        <p>067 166 4440</p>
-                        <span class="contact-note">Order inquiries & quotations</span>
-                    </div>
-                    <div class="contact-card" data-aos="flip-right" data-aos-duration="600">
-                        <div class="contact-icon">
-                            <i class="far fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p>christornothing144@gmail.com</p>
-                        <span class="contact-note">General inquiries</span>
-                    </div>
-                </div>
-                <div class="contact-message" data-aos="fade-up">
-                    <i class="fas fa-info-circle"></i>
-                    <p>Add items to your cart and request a quotation via WhatsApp. We'll respond with pricing and availability.</p>
-                </div>
-            </section>
-        </div>
     </main>
 
     <!-- Footer -->
